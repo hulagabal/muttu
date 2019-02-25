@@ -1,6 +1,7 @@
 package muttu.muttu;
 
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -23,6 +24,13 @@ public class LoginPage {
 		logger.error("Error");
 		
 		System.out.println("End");
+	}
+	
+	@Test
+	public void start(){
+		Assert.assertTrue(false);
+		
+		System.out.println("Failed");
 	}
 
 }
