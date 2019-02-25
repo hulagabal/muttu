@@ -21,6 +21,8 @@ public class LoginPage {
 		System.out.println("Logged In");
 
 		logger.error("Error");
+		
+		System.out.println("End");
 	}
 
 }
