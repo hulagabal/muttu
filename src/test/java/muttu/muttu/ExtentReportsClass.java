@@ -19,7 +19,7 @@ public class ExtentReportsClass{
 	ExtentTest logger;
 	
 	
-	@BeforeTest
+	@BeforeTest // this will run any test run and set up all the basic information to the document
 	public void startReport(){
 		//ExtentReports(String filePath,Boolean replaceExisting) 
 		//filepath - path of the file, in .htm or .html format - path where your report needs to generate. 
@@ -62,7 +62,7 @@ public class ExtentReportsClass{
 		throw new SkipException("Skipping - This is not ready for testing ");
 	}
 	
-	@AfterMethod
+	@AfterMethod // this will execute after every test run
 	public void getResult(ITestResult result){
 		if(result.getStatus() == ITestResult.FAILURE){
 			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getName());
@@ -74,7 +74,7 @@ public class ExtentReportsClass{
 		//endTest(logger) : It ends the current test and prepares to create HTML report
 		extent.endTest(logger);
 	}
-	@AfterTest
+	@AfterTest // this will execute after all the tests are run
 	public void endReport(){
 		// writing everything to document
 		//flush() - to write or update test information to your report. 
